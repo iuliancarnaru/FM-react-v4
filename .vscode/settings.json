@@ -1,3 +1,4 @@
 {
-    "prettier.requireConfig": true
+    "prettier.requireConfig": true,
+    "git.ignoreLimitWarning": true
 }
