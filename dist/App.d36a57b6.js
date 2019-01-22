@@ -25355,19 +25355,45 @@ var App =
 function (_React$Component) {
   _inherits(App, _React$Component);
 
-  function App() {
+  function App(props) {
+    var _this;
+
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(App).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
+    _this.state = {
+      pets: []
+    };
+    return _this;
   }
 
   _createClass(App, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var promise = petfinder.breed.list({
-        animal: "dog"
+      var _this2 = this;
+
+      petfinder.pet.find({
+        output: "full",
+        location: "Seatle, WA"
+      }).then(function (data) {
+        var pets;
+
+        if (data.petfinder.pets && data.petfinder.pets.pet) {
+          if (Array.isArray(data.petfinder.pets.pet)) {
+            pets = data.petfinder.pets.pet;
+          } else {
+            pets = [data.petfinder.pets.pet];
+          }
+        } else {
+          pets = [];
+        }
+
+        ;
+
+        _this2.setState({
+          pets: pets
+        });
       });
-      promise.then(console.log, console.error);
     }
   }, {
     key: "handleTitleClick",
