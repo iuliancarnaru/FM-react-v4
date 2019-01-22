@@ -1,0 +1,24 @@
+{
+  "name": "intro-to-react-v4",
+  "version": "1.0.0",
+  "description": "Complete Intro to React - Brian Holt",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \" src/**/*.{js, jsx, css, json} \"",
+    "format:check": "prettier --list-different \" src/**/*.{js, jsx, css, json} \"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iuliancarnaru/intro-to-react-v4.git"
+  },
+  "author": "Iulian Carnaru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iuliancarnaru/intro-to-react-v4/issues"
+  },
+  "homepage": "https://github.com/iuliancarnaru/intro-to-react-v4#readme",
+  "devDependencies": {
+    "prettier": "^1.16.0"
+  }
+}
