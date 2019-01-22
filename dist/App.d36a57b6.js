@@ -24482,12 +24482,32 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"App.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"Pet.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Pet = function Pet(props) {
+  return _react.default.createElement("div", null, _react.default.createElement("h1", null, props.name), _react.default.createElement("h2", null, props.animal), _react.default.createElement("h2", null, props.breed));
+};
+
+var _default = Pet;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = require("react-dom");
+
+var _Pet = _interopRequireDefault(require("./Pet"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24509,10 +24529,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var Pet = function Pet(props) {
-  return _react.default.createElement("div", {}, [_react.default.createElement("h1", {}, props.name), _react.default.createElement("h2", {}, props.animal), _react.default.createElement("h2", {}, props.breed)]);
-};
-
 var App =
 /*#__PURE__*/
 function (_React$Component) {
@@ -24532,29 +24548,27 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", {}, [_react.default.createElement("h1", {
-        onClick: this.handleTitleClick
-      }, "Adopt Me!"), _react.default.createElement(Pet, {
+      return _react.default.createElement("div", null, _react.default.createElement("h1", null, "Adopt Me!"), _react.default.createElement(_Pet.default, {
         name: "Luna",
-        animal: "Dog",
-        breed: "Havanese"
-      }), _react.default.createElement(Pet, {
+        animal: "dog",
+        breed: "havanese"
+      }), _react.default.createElement(_Pet.default, {
         name: "Peper",
-        animal: "Bird",
-        breed: "Cockateil"
-      }), _react.default.createElement(Pet, {
-        name: "Fibi",
-        animal: "Cat",
-        breed: "Mixed"
-      })]);
+        animal: "bird",
+        breed: "cockatier"
+      }), _react.default.createElement(_Pet.default, {
+        name: "Doink",
+        animal: "cat",
+        breed: "mixed"
+      }));
     }
   }]);
 
   return App;
 }(_react.default.Component);
 
-(0, _reactDom.render)(_react.default.createElement(App, {}, null), document.getElementById("root"));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+(0, _reactDom.render)(_react.default.createElement(App, null), document.getElementById("root"));
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./Pet":"Pet.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -24581,7 +24595,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65517" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49224" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
