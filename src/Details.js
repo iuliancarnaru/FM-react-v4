@@ -21,8 +21,8 @@ class Details extends React.Component {
         id: this.props.id
       })
       .then(data => {
-        const pet = data.petfinder.pet;
         let breed;
+        const pet = data.petfinder.pet;
 
         if (Array.isArray(pet.breeds.breed)) {
           breed = pet.breeds.breed.join(", ");
@@ -34,7 +34,7 @@ class Details extends React.Component {
           name: pet.name,
           animmal: pet.animal,
           location: `${pet.contact.city}, ${pet.contact.state}`,
-          desciption: pet.description,
+          description: pet.description,
           media: pet.media,
           breed,
           loading: false
@@ -52,7 +52,7 @@ class Details extends React.Component {
 
     return (
       <div className="details">
-      <Carousel media={media}/>
+        <Carousel media={media} />
         <div>
           <h1>{name}</h1>
           <h2>
