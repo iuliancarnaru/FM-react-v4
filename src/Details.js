@@ -1,6 +1,7 @@
 import React from "react";
 import pf from "petfinder-client";
 import { navigate } from "@reach/router";
+import Carousel from "./Carousel";
 require("dotenv").config();
 
 const petfinder = pf({
@@ -47,10 +48,11 @@ class Details extends React.Component {
     if (this.state.loading) {
       return <h1> loading...</h1>;
     }
-    const { name, animal, breed, location, description } = this.state;
+    const { name, animal, breed, location, description, media } = this.state;
 
     return (
       <div className="details">
+      <Carousel media={media}/>
         <div>
           <h1>{name}</h1>
           <h2>
