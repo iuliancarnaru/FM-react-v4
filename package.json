@@ -6,7 +6,7 @@
   "scripts": {
     "format": "prettier --write \" src/**/*.{js, jsx, css, json} \"",
     "format:check": "prettier --list-different \" src/**/*.{js, jsx, css, json} \"",
-    "lint": "eslint \"**/*.{js, jsx}\"",
+    "lint": "eslint \"src/**/*.{js, jsx}\"",
     "dev": "parcel src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/iuliancarnaru/intro-to-react-v4#readme",
   "devDependencies": {
     "babel-eslint": "^10.0.1",
+    "dotenv": "^6.2.0",
     "eslint": "^5.12.1",
     "eslint-config-prettier": "^3.6.0",
     "eslint-plugin-import": "^2.15.0",
@@ -32,6 +33,8 @@
     "prettier": "^1.16.0"
   },
   "dependencies": {
+    "pet": "^1.0.1",
+    "petfinder-client": "0.0.3",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   }
